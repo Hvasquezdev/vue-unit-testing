@@ -1,4 +1,4 @@
-import { mount, config } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import Bilingual from '@/components/Bilingual';
 import translations from '@/translations.js';
 
