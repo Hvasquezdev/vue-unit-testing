@@ -1,16 +1,12 @@
 import { mount } from '@vue/test-utils';
 import App from '@/App';
 import NestedRoute from '@/views/NestedRoute';
-import { createRouter, createMemoryHistory } from 'vue-router';
-import { routes } from '@/router';
+import { createVueRouter } from '@/router';
 
 describe('App', () => {
   describe('NestRoute', () => {
     it('renders a child view via routing', async () => {
-      const router = createRouter({
-        history: createMemoryHistory(),
-        routes,
-      });
+      const router = createVueRouter();
 
       router.push('/nested-route');
       await router.isReady();

@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from 'vue-router';
+import { createWebHistory, createMemoryHistory, createRouter } from 'vue-router';
 
 // Routes
 import Home from '@/views/Home';
@@ -22,3 +22,9 @@ export const router = createRouter({
   routes,
 });
 
+export const createVueRouter = (customRoutes) => {
+  return createRouter({
+    history: createMemoryHistory(),
+    routes: customRoutes || routes,
+  });
+};

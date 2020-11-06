@@ -1,20 +1,8 @@
-import { createStore } from 'vuex';
+import { createVuexStore } from '@/store';
 import { mount } from '@vue/test-utils';
 import ComponentWithVuex from '@/components/ComponentWithVuex';
 
-const store = createStore({
-  state() {
-    return {
-      username: 'alice',
-      firstName: 'Alice',
-      lastName: 'Doe',
-    };
-  },
-
-  getters: {
-    fullname: (state) => state.firstName + ' ' + state.lastName,
-  },
-});
+const store = createVuexStore();
 
 describe('ComponentWithVuex', () => {
   it('renders a username using a real Vuex store', () => {

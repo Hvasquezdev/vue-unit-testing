@@ -1,19 +1,8 @@
-import { createStore } from 'vuex';
+import { createVuexStore } from '@/store';
 import { mount } from '@vue/test-utils';
 import ComponentWithGetters from '@/components/ComponentWithGetters';
 
-const store = createStore({
-  state() {
-    return {
-      firstName: 'Alice',
-      lastName: 'Doe',
-    };
-  },
-
-  getters: {
-    fullname: (state) => state.firstName + ' ' + state.lastName,
-  },
-});
+const store = createVuexStore();
 
 describe('ComponentWithGetters', () => {
   it('renders a fullname using a real Vuex getter', () => {
